@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="50" height="50" tilewidth="64" tileheight="64">
+ <tileset firstgid="1" name="tileset" tilewidth="64" tileheight="64">
+  <image source="tileset.png" width="384" height="256"/>
+  <tile id="0">
+   <properties>
+    <property name="solid" value="true"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="Tiles" width="50" height="50">
+  <data encoding="base64" compression="zlib">
+   eJzt1DEKgDAQBMDExv//WARtQryIhTlxBrYwNrccSSn/UYNkE826Z+mk7ZGh39WsS/CvnbmWfr83RT2i9PY2cydP9jHqN8OoR+18jzJDdKfP8/VIxneqdefN+kKPK3rkkuEOAwAAAAAAAJDPBuxfANs=
+  </data>
+ </layer>
+ <layer name="Blocks" width="50" height="50">
+  <data encoding="base64" compression="zlib">
+   eJzt0jsKACAMRMGAn/sf2cYTqBgIM/D6LTYCuNGzB3wwswccaDt4qcqvxg4AAAAAAAAAqllK6AAh
+  </data>
+ </layer>
+ <objectgroup name="Spawns" width="50" height="50">
+  <object name="Player" x="243" y="244"/>
+  <object name="Enemy" type="Basic" x="738" y="236"/>
+  <object name="Enemy" type="Basic" x="472" y="419" width="28" height="26"/>
+ </objectgroup>
+</map>
