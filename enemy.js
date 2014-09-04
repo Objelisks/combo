@@ -2,6 +2,7 @@ define(function(require, exports) {
 
   var colliders = require('collider');
   var preload = require('preload');
+  var flash = require('effects/flash');
 
   var bitmap;
 
@@ -24,7 +25,8 @@ define(function(require, exports) {
     this.properties = {
       'solid': true,
       'health': true,
-      'actor': true
+      'actor': true,
+      'falls': true
     }
 
     this.health = 10.0;
@@ -40,8 +42,8 @@ define(function(require, exports) {
   }
 
   Enemy.prototype.damage = function(amount) {
-    this.flash();
-    Phaser.Sprite.damage.call(this, amount);
+    flash(this, 80);
+    Phaser.Sprite.prototype.damage.call(this, amount);
   }
 
 

@@ -34,23 +34,20 @@ define(function(require, exports) {
 
     var switchButton = this.game.input.keyboard.addKey(Phaser.Keyboard.C);
     switchButton.onDown.add(function() {
+      this.itemGroup.getAt(this.currentItem).visible = false;
       this.currentItem = (this.currentItem + 1) % this.itemGroup.length;
+      this.itemGroup.getAt(this.currentItem).visible = true;
     }, this);
 
     this.properties = {
       'solid': true,
       'health': true,
       'player': true,
-      'actor': true
+      'actor': true,
+      'falls': true
     }
   }
   Player.prototype = Object.create(Phaser.Sprite.prototype);
-
-  Player.prototype.switchItem = function(newItem) {
-    this.itemGroup.remove(this.item);
-    this.item = newItem;
-    this.itemGroup.add(this.item);
-  }
 
   Player.prototype.update = function() {
     var keys = this.game.input.keyboard;
@@ -73,8 +70,9 @@ define(function(require, exports) {
 
     this.game.physics.arcade.collide(this, colliders);
 
-    if(this.item) {
-      this.item.update();
+    if(this.itemGroup.length > 0) {
+      var item = this.itemGroup.getAt(this.currentItem);
+      item.update(); 
     }
   }
 

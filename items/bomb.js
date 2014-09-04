@@ -21,10 +21,11 @@ define(function(require, exports) {
     Phaser.Sprite.call(this, game, x, y, explosionImage);
     this.game.physics.enable(this, Phaser.Physics.ARCADE);
     this.anchor.setTo(0.5, 0.5);
-    this.alreadyHit = {};
+    this.alreadyHit = [];
     this.body.immovable = true;
     this.properties = {
-      'hitbox': true
+      'hitbox': true,
+      'falls': true
     };
     this.effect = {
       'damage': 1.0,
@@ -41,9 +42,9 @@ define(function(require, exports) {
 
   BombExplosion.prototype.collideCallback = function(projectile, other) {
     if(other.properties['solid'] && !other.properties['player']) {
-      if(other.properties['health'] && !this.alreadyHit[other]) {
+      if((other.properties['health'] || other.properties['breakable']) && this.alreadyHit.indexOf(other) === -1) {
         other.damage(this.effect.damage);
-        this.alreadyHit[other] = true;
+        this.alreadyHit.push(other);
       }
     }
   }

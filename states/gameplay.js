@@ -1,5 +1,5 @@
 define(function(require, exports) {
-  var Terrain = require('terrain');
+  var TerrainBuilder = require('terrain');
   var colliders = require('collider');
   var preload = require('preload');
 
@@ -8,7 +8,7 @@ define(function(require, exports) {
     preload: function() {
       preload.preload(this.game);
       this.game.load.tilemap('tilemap', './tilemaps/tilemap.json', null, Phaser.Tilemap.TILED_JSON);
-      this.game.load.image('tileset', './tilemaps/tileset.png');
+      this.game.load.spritesheet('tileset', './tilemaps/tileset.png', 64, 64);
 
       console.log('done preloading');
     },
@@ -20,7 +20,8 @@ define(function(require, exports) {
       //colliders = this.game.add.group();
       //collider.setup(this.game);
 
-      var tilemap = new Terrain(this.game, 'tilemap');
+      var tilemap = new TerrainBuilder(this.game, 'tilemap');
+      tilemap.build();
     },
 
     update: function() {

@@ -7,18 +7,23 @@
     <property name="solid" value="true"/>
    </properties>
   </tile>
+  <tile id="1">
+   <properties>
+    <property name="solid" value="true"/>
+   </properties>
+  </tile>
  </tileset>
  <layer name="Tiles" width="50" height="50">
   <data encoding="base64" compression="zlib">
-   eJzt1DEKgDAQBMDExv//WARtQryIhTlxBrYwNrccSSn/UYNkE826Z+mk7ZGh39WsS/CvnbmWfr83RT2i9PY2cydP9jHqN8OoR+18jzJDdKfP8/VIxneqdefN+kKPK3rkkuEOAwAAAAAAAJDPBuxfANs=
+   eJzt1EEKwCAMBED1/48uvZYYSw81pTOwB/GSJWhr/9GTVJPNemYEufao0G8260jurjP3Fvd7U9YjS7S3nTt5so9Vvx1WPXpwXmWH7E1HPaq782d9oceMHrVUeMMAAAAAAAAA1HMAniwA0Q==
   </data>
  </layer>
  <layer name="Blocks" width="50" height="50">
   <data encoding="base64" compression="zlib">
-   eJzt0jsKACAMRMGAn/sf2cYTqBgIM/D6LTYCuNGzB3wwswccaDt4qcqvxg4AAAAAAAAAqllK6AAh
+   eJzt0jEOgCAQRUESFL3/iSnYVgsKkc1M8qptfrGlPLtfbsBwrB7wgbZ6wIQa7e6K+Icsf3VGAAAAAAAAAJBNB1aBADc=
   </data>
  </layer>
- <objectgroup name="Spawns" width="50" height="50">
+ <objectgroup name="Spawns" width="50" height="50" visible="0">
   <object name="Player" x="243" y="244"/>
   <object name="Enemy" type="Basic" x="738" y="236"/>
   <object name="Enemy" type="Basic" x="472" y="419" width="28" height="26"/>
